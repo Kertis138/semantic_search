@@ -1,0 +1,42 @@
+{
+  "type": "default",
+  "script":
+  {
+    "nodes":
+    [
+      {
+
+        "resources": {
+          "staticData": [
+            "http://spaces.ru/musicat/?link_id=647882&sid=",
+            "http://spaces.ru/dating/?link_id=647882&sid="
+          ],
+          "dynamicData":
+          [
+            {
+              "url": "http://spaces.ru/sz/?link_id=643583",
+              "selector": "#main_wrap > div.main > div.list_item.lh_160 > a",
+              "type": "attr",
+              "attrName":"href"
+            }
+          ]
+        },
+
+        "template": {
+          "elements":[
+            {
+              "selector":"#main_wrap > div.main > div.list_item.lh_160 > a",
+              "vars": [
+                {
+                  "name":"title",
+                  "selector":"span",
+                  "type":"text"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

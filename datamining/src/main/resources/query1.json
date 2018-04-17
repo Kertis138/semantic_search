@@ -1,0 +1,14 @@
+{
+  "module":"PageParserByXPath",
+  "script":{
+    "address":"https://stackoverflow.com/questions/16335820/convert-xpath-to-jsoup-query",
+    "vars":[
+      {
+        "name":"year",
+        "type":"text",
+        "attrName":"class",
+        "xpath":"div"
+      }
+    ]
+  }
+}
