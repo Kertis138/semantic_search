@@ -1,0 +1,7 @@
+src/main/resources/local.properties
+.idea
+log
+target
+.git
+owlbotserver.iml
+dependency-reduced-pom.xml

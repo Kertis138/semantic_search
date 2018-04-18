@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/main-page', 'HomeController@main_page')->name('main-page');
+Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
+
+Route::get("/api/status", "ApiController@status");

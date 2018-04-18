@@ -1,0 +1,8 @@
+#Local properties is in a higher priority than properties in application.properties.
+#Also local.properties isnt added to Version Contol (git).
+
+mysql.name=datamining
+mysql.host=localhost
+mysql.port=3306
+mysql.user=root
+mysql.pass=root

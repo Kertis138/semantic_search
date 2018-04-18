@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	  <modelVersion>4.0.0</modelVersion>
+	  <groupId>owlbotTeam</groupId>
+	  <artifactId>owlbotserver</artifactId>
+	  <version>1.0-SNAPSHOT</version>
+	  <name>semanticServer</name>
+
+	  
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jetty.version>9.1.4.v20140401</jetty.version>
+        <spring.version>5.0.4.RELEASE</spring.version>
+        <jackson.version>2.9.4</jackson.version>
+        <gson.verson>2.8.2</gson.verson>
+        <slf4j.version>1.7.25</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <hibernate.version>5.2.16.Final</hibernate.version>
+        <mysql-connector.version>5.1.34</mysql-connector.version>
+        <quasar.version>0.7.9</quasar.version>
+        <reflection.version>0.9.10</reflection.version>
+        <unirest.version>1.4.9</unirest.version>
+        <mainClass>univek.com.semanticserver.AppStarter</mainClass>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.0.0</version>
+                <executions>
+                    <execution>
+                    <goals>
+                    <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                <exclude>**/*.DSA</exclude>
+                                <exclude>**/*.RSA</exclude>
+                                <exclude>**/*.SF</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>${mainClass}</mainClass>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/spring.handlers</resource>
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <resource>META-INF/spring.schemas</resource>
+                            </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.10</source>
+                    <target>1.10</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	    
+    <dependencies>
+
+        <!-- SPRING -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- JACKSON-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- JETTY -->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+
+        <!-- HIBERNATE -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.9.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+
+        <!-- LOGGER -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <!-- GSON -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.verson}</version>
+        </dependency>
+
+        <!-- PARALLEL UNIVERSE -->
+        <dependency>
+            <groupId>co.paralleluniverse</groupId>
+            <artifactId>quasar-core</artifactId>
+            <version>${quasar.version}</version>
+        </dependency>
+
+
+        <!-- REFLECTION-->
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>${reflection.version}</version>
+        </dependency>
+
+        <!-- JAVA 10 XML BIND-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.2.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2.11</version>
+        </dependency>
+
+        <!-- UNIREST-->
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>${unirest.version}</version>
+        </dependency>
+
+    </dependencies>
+	
+	</project>
+	
