@@ -28,4 +28,10 @@
     <alias name="standardFilterManager" alias="filterManager" />
     <bean name="standardFilterManager" class="univek.com.semanticserver.server.filterManager.impl.StandardFilterManager" />
 
+    <alias name="defaultScriptManager" alias="scriptManager" />
+    <bean name="defaultScriptManager" class="univek.com.semanticserver.core.managers.ScriptManager" />
+
+    <alias name="defaultThreadManager" alias="threadManager" />
+    <bean name="defaultThreadManager" class="univek.com.semanticserver.core.managers.ThreadManager" />
+
 </beans>

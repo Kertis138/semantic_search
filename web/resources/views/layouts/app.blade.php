@@ -13,7 +13,7 @@
     @show
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="@yield('bodyclass')">
 
 @include("include.header")
 @yield("wrapper")

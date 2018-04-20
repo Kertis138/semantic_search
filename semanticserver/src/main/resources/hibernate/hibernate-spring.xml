@@ -34,6 +34,7 @@
         </property>
         <property name="annotatedClasses">
             <list>
+                <value>univek.com.semanticserver.database.domains.Driver</value>
             </list>
         </property>
 

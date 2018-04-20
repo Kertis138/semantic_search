@@ -10397,3 +10397,39 @@ a.text-dark:focus {
   padding: 15px 15px;
 }
 
+#status-wrapper h5 {
+  float: left;
+  margin-right: 5px;
+}
+
+#status-wrapper #server-status-span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+#left-sidebar svg {
+  margin-right: 10px;
+}
+
+#add_script_textarea {
+  width: 100%;
+  min-height: 500px;
+}
+
+#add_script_name {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#datamining_start {
+  margin-top: 10px;
+}
+
+#main-simple-box {
+  padding-bottom: 20px;
+}
+

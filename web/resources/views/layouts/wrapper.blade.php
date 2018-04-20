@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<div class="col-9">
-			<div class="simple-box">
+			<div class="simple-box" id="main-simple-box">
 				@yield("content-wrapper")
 			</div>
 		</div>

@@ -1,18 +1,35 @@
 package univek.com.semanticserver;
 
 import org.apache.log4j.Logger;
+import univek.com.semanticserver.core.managers.ScriptManager;
+import univek.com.semanticserver.core.scripts.ScriptHandler;
+import univek.com.semanticserver.server.controllers.impl.ExecuteController;
 import univek.com.semanticserver.server.starter.ServerStarter;
 import univek.com.semanticserver.server.starter.impl.JettyServerStarter;
 import univek.com.semanticserver.utilities.propertyWorker.PropertyWorker;
 import univek.com.semanticserver.server.starter.ServerStarter;
 import univek.com.semanticserver.server.starter.impl.JettyServerStarter;
 
+import java.io.*;
+
 public class AppStarter
 {
     private static Logger log = Logger.getLogger(AppStarter.class);
 
-	public static void main(String[] args)
-    {
+	public static void main(String[] args) throws IOException {
+//        File file = new File("/home/univek/Development/Big/datamining/semanticserver/src/main/resources/query2.json");
+//        FileInputStream fis = new FileInputStream(file);
+//        byte[] data = new byte[(int) file.length()];
+//        fis.read(data);
+//        fis.close();
+//
+//        String scriptText = new String(data, "UTF-8");
+//
+//        ScriptManager scriptManager = new ScriptManager();
+//        ScriptHandler scriptHandler = scriptManager.getScriptModel(scriptText);
+//        scriptHandler.start();
+
+
         runServer(args);
     }
 

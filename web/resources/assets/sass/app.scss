@@ -6,4 +6,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import "header";
 @import "common";
+@import "dashboard";
+@import "left-sidebar";
+@import "add_script";
+@import "datamining";
 
+#main-simple-box {
+	padding-bottom: 20px;
+}

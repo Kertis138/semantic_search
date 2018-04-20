@@ -11,4 +11,7 @@ require('./bootstrap');
 //     el: '#app'
 // });
 
-require('./dashboard')
+require('./common');
+require('./dashboard');
+require('./datamining');
+require('./add_script');

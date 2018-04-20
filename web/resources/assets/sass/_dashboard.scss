@@ -1,0 +1,15 @@
+
+#status-wrapper {
+	h5 {
+		float: left;
+		margin-right: 5px;
+	}
+	#server-status-span {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: #f3f3f3;
+		display: inline-block;
+		margin-top: 4px;
+	}
+}
