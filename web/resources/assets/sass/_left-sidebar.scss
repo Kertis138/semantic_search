@@ -1,5 +1,26 @@
-#left-sidebar {
+.left-sidebar {
 	svg {
 		margin-right: 10px;
+	}
+	.title {
+		text-align: center;
+		display: block;
+		margin: 0 auto;
+		font-size: 17px;
+		color: #4d5258;
+	}
+	.img_block {
+		float: left;
+		margin: 5px 10px;
+		img {
+			width: 100px;
+			height: 100px;
+			display: block;
+		}
+		span {
+			width: 100px;
+			display: block;
+			text-align: center;
+		}
 	}
 }

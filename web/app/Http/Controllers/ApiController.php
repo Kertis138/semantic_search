@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Driver as Driver;
 use Illuminate\Support\Facades\Auth;
+use App\History as History;
 
 class ApiController extends Controller
 {
@@ -79,6 +80,13 @@ class ApiController extends Controller
 			return 0;
 		
 		$json_content = json_decode($content);
+
+		$h = new History;
+		$h->status = $json_content->status == 1 ? 1 : 0;
+		$h->driver_id = $id;
+		$h->user_id = Auth::user()->id;
+		$h->save();
+
 		if ($json_content->status != 1)
 			return 0;
 		return 1;   	

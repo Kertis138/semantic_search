@@ -36,11 +36,10 @@ public class ExecuteController extends AbstractRestController {
             return response.getWithStatus("0");
 
         try {
-            String script = HtmlUtils.htmlUnescape(driver.getText());
-            ScriptManager scriptManager = new ScriptManager();
-            ScriptHandler scriptHandler = scriptManager.getScriptModel(script);
-            scriptHandler.start();
-
+//            String script = HtmlUtils.htmlUnescape(driver.getText());
+//            ScriptManager scriptManager = new ScriptManager();
+//            ScriptHandler scriptHandler = scriptManager.getScriptModel(script);
+//            scriptHandler.start();
         }
         catch (Exception e) {
             return response.getWithStatus("0");

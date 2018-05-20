@@ -10390,6 +10390,7 @@ a.text-dark:focus {
 
 .simple-box {
   margin-top: 5px;
+  margin-bottom: 10px;
   background: white;
 }
 
@@ -10411,8 +10412,33 @@ a.text-dark:focus {
   margin-top: 4px;
 }
 
-#left-sidebar svg {
+.left-sidebar svg {
   margin-right: 10px;
+}
+
+.left-sidebar .title {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 17px;
+  color: #4d5258;
+}
+
+.left-sidebar .img_block {
+  float: left;
+  margin: 5px 10px;
+}
+
+.left-sidebar .img_block img {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.left-sidebar .img_block span {
+  width: 100px;
+  display: block;
+  text-align: center;
 }
 
 #add_script_textarea {

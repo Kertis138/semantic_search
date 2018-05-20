@@ -30,8 +30,11 @@ public class StatusController extends AbstractRestController {
     public @ResponseBody
     ServerResponse _requestCount() {
         RequestCountStatusControllerResponse response = new RequestCountStatusControllerResponse();
+        int[] testData = {15,13,15,15,20,10,15,16,15,17};
+
         for (int i = 0; i < 10; i++) {
-            response.requestCount[i] = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            //response.requestCount[i] = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            response.requestCount[i] = testData[i];
         }
         return response.getWithStatus("1");
     }
@@ -40,8 +43,10 @@ public class StatusController extends AbstractRestController {
     public @ResponseBody
     ServerResponse requestCount() {
         RequestCountStatusControllerResponse response = new RequestCountStatusControllerResponse();
+        int[] testData = {10,50,40,60,60,60,75,60,60,60};
         for (int i = 0; i < 10; i++) {
-            response.requestCount[i] = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            //response.requestCount[i] = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            response.requestCount[i] = testData[i];
         }
         return response.getWithStatus("1");
     }
